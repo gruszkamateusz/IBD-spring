@@ -9,8 +9,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @SpringBootApplication
 public class IbdApplication implements CommandLineRunner{
 
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
+	// @Autowired
+	// private JdbcTemplate jdbcTemplate;
 
 	public static void main(String[] args) {
 		SpringApplication.run(IbdApplication.class, args);
@@ -18,8 +18,8 @@ public class IbdApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		String sql ="INSERT INTO `ibd`.`Printouts`( `title` , `date`)VALUES('TEST','2020-10-10T10:20:20');";
-		 jdbcTemplate.execute(sql);
+		// String sql ="INSERT INTO `ibd`.`Printouts`( `title` , `date`)VALUES('TEST','2020-10-10T10:20:20');";
+		//  jdbcTemplate.execute(sql);
 	}
 
 }
