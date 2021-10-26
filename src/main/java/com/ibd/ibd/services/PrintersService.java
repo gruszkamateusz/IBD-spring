@@ -14,24 +14,29 @@ import org.springframework.stereotype.Service;
 public class PrintersService{
 
     @Autowired
-    private PrintersRepository customerRepository;
+    private PrintersRepository printersRepository;
 
     public List <PrintersData> getAllPrinters(){
-        List < PrintersData > customers = new ArrayList < > ();
-        List < Printers > customerList = customerRepository.findAll();
-        for(int i =0; i< customerList.size();i++ ){
-            customers.add(populateCustomerData(customerList.get(i)));
+        List < PrintersData > printers = new ArrayList < > ();
+        List < Printers > printersList = printersRepository.findAll();
+        for(int i =0; i< printersList.size();i++ ){
+            printers.add(populatePrintersData(printersList.get(i)));
         }
-        return customers;
+        return printers;
 
     }
-    private PrintersData populateCustomerData(final Printers customerData) {
-        PrintersData customer = new PrintersData();
-        customer.setID(customerData.getID());
-        customer.setOwner(customerData.getOwner());
-        customer.setLocalization(customerData.getLocalization());
-        customer.setType(customerData.getType());
-        return customer;
+
+    public void deletePrinter(long id){
+        printersRepository.deleteById(id);
+    }
+
+    private PrintersData populatePrintersData(final Printers printersData) {
+        PrintersData printer = new PrintersData();
+        printer.setID(printersData.getID());
+        printer.setOwner(printersData.getOwner());
+        printer.setLocalization(printersData.getLocalization());
+        printer.setType(printersData.getType());
+        return printer;
     }
 }
 

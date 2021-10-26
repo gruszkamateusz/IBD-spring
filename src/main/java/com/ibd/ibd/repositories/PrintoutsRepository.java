@@ -1,10 +1,9 @@
 package com.ibd.ibd.repositories;
 
-import com.ibd.ibd.models.Printers;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import com.ibd.ibd.models.Printouts;
 
 @Repository
-public interface PrintersRepository extends JpaRepository<Printers,Long> {
+public interface PrintoutsRepository extends JpaRepository<Printouts,Long> {
  }
