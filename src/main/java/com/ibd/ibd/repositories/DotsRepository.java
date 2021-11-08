@@ -2,9 +2,10 @@ package com.ibd.ibd.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.ibd.ibd.models.Printouts;
+
+import com.ibd.ibd.models.Dots;
 
 @Repository
-public interface PrintoutsRepository extends JpaRepository<Printouts,Long> {
+public interface DotsRepository extends JpaRepository<Dots,Long> {
  }
  

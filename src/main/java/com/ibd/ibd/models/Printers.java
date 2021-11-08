@@ -9,18 +9,19 @@ import javax.persistence.Id;
 public class Printers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idprinters;
-    private String localization;
+    private long idprinters;
+    private long idlocalization;
     private String owner;
     private String type;
    
     public Printers() {
     }
-    public int getID() {
+
+    public long getID() {
         return idprinters;
     }
-    public String getLocalization() {
-        return localization;
+    public long getLocalization() {
+        return idlocalization;
     }
     public String getOwner() {
         return owner;
@@ -31,8 +32,8 @@ public class Printers {
     public void setID(int s) {
         this.idprinters = s;
     }
-    public void setLocalization(String s) {
-         this.localization = s;
+    public void setLocalization(long s) {
+         this.idlocalization = s;
     }
     public void setOwner(String s) {
         this.owner = s;

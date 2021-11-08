@@ -2,9 +2,12 @@ package com.ibd.ibd.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.ibd.ibd.dto.PrintersData;
+import com.ibd.ibd.models.Localization;
 import com.ibd.ibd.models.Printers;
+import com.ibd.ibd.repositories.LocalizationRepository;
 import com.ibd.ibd.repositories.PrintersRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,18 +28,22 @@ public class PrintersService{
         return printers;
 
     }
-
     public void deletePrinter(long id){
         printersRepository.deleteById(id);
     }
 
-    private PrintersData populatePrintersData(final Printers printersData) {
-        PrintersData printer = new PrintersData();
-        printer.setID(printersData.getID());
-        printer.setOwner(printersData.getOwner());
-        printer.setLocalization(printersData.getLocalization());
-        printer.setType(printersData.getType());
-        return printer;
+    private PrintersData populatePrintersData(final Printers printer) {
+
+        PrintersData printerData = new PrintersData();
+        printerData.setID(printer.getID());
+        printerData.setOwner(printer.getOwner());
+        printerData.setLocalization(printer.getLocalization());
+        printerData.setType(printer.getType());
+        return printerData;
+    }
+    
+    public void save(Printers document) {
+        printersRepository.save(document);
     }
 }
 

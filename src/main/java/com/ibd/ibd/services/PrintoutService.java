@@ -29,12 +29,12 @@ public class PrintoutService {
         printersRepository.deleteById(id);
     }
 
-    private PrintoutData populatePrintoutData(final Printouts printoutsData) {
-        PrintoutData printout = new PrintoutData();
-        printout.setID(printoutsData.getID());
-        printout.setIDPrinter(printoutsData.getIDPrinter());
-        printout.setTitle(printoutsData.getTitle());
-        printout.setDate(printoutsData.getDate());
-        return printout;
+    private PrintoutData populatePrintoutData(final Printouts printer) {
+        PrintoutData printoutsData = new PrintoutData();
+        printoutsData.setID(printer.getID());
+        printoutsData.setIDPrinter(printer.getIDPrinter());
+        printoutsData.setTitle(printer.getTitle());
+        printoutsData.setDate(printer.getDate());
+        return printoutsData;
     }
 }

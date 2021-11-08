@@ -1,21 +1,20 @@
 package com.ibd.ibd.dto;
 
 import java.time.LocalDateTime;
-
-public class PrintoutData {
-    private long idprintouts;
+public class DotsData {
+    private long iddot;
     private long idprinters;
     private String title;
     private LocalDateTime date;
 
-    public PrintoutData() {
-        this.idprintouts = idprintouts;
+    public DotsData() {
+        this.iddot = iddot;
         this.idprinters = idprinters;
         this.title = title;
         this.date = date;
     }
     public long getID() {
-        return idprintouts;
+        return iddot;
     }
     public long getIDPrinter() {
         return idprinters;
@@ -27,7 +26,7 @@ public class PrintoutData {
         return date;
     }
     public void setID(long l) {
-        this.idprintouts = l;
+        this.iddot = l;
     }
     public void setIDPrinter(long l) {
         this.idprinters = l;

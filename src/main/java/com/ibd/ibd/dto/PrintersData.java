@@ -1,8 +1,12 @@
 package com.ibd.ibd.dto;
 
+import java.util.Optional;
+
+import com.ibd.ibd.models.Localization;
+
 public class PrintersData {
-    private int idprinters;
-    private String localization;
+    private long idprinters;
+    private long localization;
     private String owner;
     private String type;
 
@@ -12,10 +16,10 @@ public class PrintersData {
         this.owner = owner;
         this.type = type;
     }
-    public int getID() {
+    public long getID() {
         return idprinters;
     }
-    public String getLocalization() {
+    public long getLocalization() {
         return localization;
     }
     public String getOwner() {
@@ -24,11 +28,11 @@ public class PrintersData {
     public String getType() {
         return type;
     }
-    public void setID(int s) {
-        this.idprinters = s;
+    public void setID(long l) {
+        this.idprinters = l;
     }
-    public void setLocalization(String s) {
-         this.localization = s;
+    public void setLocalization(long localization) {
+         this.localization = localization;
     }
     public void setOwner(String s) {
         this.owner = s;

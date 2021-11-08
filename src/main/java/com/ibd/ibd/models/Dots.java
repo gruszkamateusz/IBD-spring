@@ -9,19 +9,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Printouts {
+public class Dots {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idprintouts;
+    private long iddot;
     private long idprinters;
     private String title;
     private LocalDateTime date;
    
-    public Printouts() {
+    public Dots() {
     }
 
     public long getID() {
-        return idprintouts;
+        return iddot;
     }
     public long getIDPrinter() {
         return idprinters;
@@ -33,7 +33,7 @@ public class Printouts {
         return date;
     }
     public void setID(int s) {
-        this.idprintouts = s;
+        this.iddot = s;
     }
     public void setIDPrinter(int s) {
         this.idprinters = s;
