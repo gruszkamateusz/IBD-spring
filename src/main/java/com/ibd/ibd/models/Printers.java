@@ -17,6 +17,13 @@ public class Printers {
     public Printers() {
     }
 
+    public Printers(long idprinters,long idlocalization,String owner,String type) {
+        this.idprinters = idprinters;
+        this.idlocalization = idlocalization;
+        this.owner = owner;
+        this.type = type;
+    }
+
     public long getID() {
         return idprinters;
     }
@@ -29,7 +36,7 @@ public class Printers {
     public String getType() {
         return type;
     }
-    public void setID(int s) {
+    public void setID(long s) {
         this.idprinters = s;
     }
     public void setLocalization(long s) {

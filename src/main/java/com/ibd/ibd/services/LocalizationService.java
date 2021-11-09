@@ -38,4 +38,7 @@ public class LocalizationService {
 
         return localizationData;
     }
+    public void save(Localization localization) {
+        localizationRepository.save(localization);
+    }
 }

@@ -42,8 +42,8 @@ public class PrintersService{
         return printerData;
     }
     
-    public void save(Printers document) {
-        printersRepository.save(document);
+    public void save(Printers printer) {
+        printersRepository.save(printer);
     }
 }
 

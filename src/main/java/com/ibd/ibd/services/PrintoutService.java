@@ -13,11 +13,11 @@ import org.springframework.stereotype.Service;
 @Service("printoutsService")
 public class PrintoutService {
     @Autowired
-    private PrintoutsRepository printersRepository;
+    private PrintoutsRepository printoutsRepository;
 
     public List <PrintoutData> getAllPrintouts(){
         List < PrintoutData > printouts = new ArrayList < > ();
-        List < Printouts > printoutsList = printersRepository.findAll();
+        List < Printouts > printoutsList = printoutsRepository.findAll();
         for(int i =0; i< printoutsList.size();i++ ){
             printouts.add(populatePrintoutData(printoutsList.get(i)));
         }
@@ -26,15 +26,18 @@ public class PrintoutService {
     }
 
     public void deletePrinter(long id){
-        printersRepository.deleteById(id);
+        printoutsRepository.deleteById(id);
     }
 
-    private PrintoutData populatePrintoutData(final Printouts printer) {
+    private PrintoutData populatePrintoutData(final Printouts printout) {
         PrintoutData printoutsData = new PrintoutData();
-        printoutsData.setID(printer.getID());
-        printoutsData.setIDPrinter(printer.getIDPrinter());
-        printoutsData.setTitle(printer.getTitle());
-        printoutsData.setDate(printer.getDate());
+        printoutsData.setID(printout.getID());
+        printoutsData.setIDPrinter(printout.getIDPrinter());
+        printoutsData.setTitle(printout.getTitle());
+        printoutsData.setDate(printout.getDate());
         return printoutsData;
+    }
+    public void save(Printouts printout) {
+        printoutsRepository.save(printout);
     }
 }

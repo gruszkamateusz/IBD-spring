@@ -41,7 +41,7 @@ public class Printouts {
     public void setTitle(String s) {
         this.title = s;
     }
-    public void setType(LocalDateTime s) {
+    public void setDate(LocalDateTime s) {
         this.date = s;
     }
 }

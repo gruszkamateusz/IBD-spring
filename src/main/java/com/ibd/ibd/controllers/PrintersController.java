@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,13 +40,17 @@ public class PrintersController {
         return new ResponseEntity<>(200,HttpStatus.OK);
     }
 
-    // @RequestMapping(value = "/printers/add", method = RequestMethod.POST)
-    // @ResponseBody
-    // public ResponseEntity<Integer> insertPrinter(@RequestParam("idprinters") Long idprinters,@RequestParam("idlocalization") Long idlocalization,@RequestParam("owner") String owner,@RequestParam("type") String type){
+    @RequestMapping(value = "/printers/add", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity<Integer> insertPrinter(@RequestBody PrintersData inputPayload){ 
 
-    //         Printers document = new Printers(idprinters,idlocalization,owner,type);
-    //         printersService.save(document);
+        Printers printer = new Printers();
+        //printer.setID(inputPayload.getID());
+        printer.setLocalization(1);
+        printer.setOwner(inputPayload.getOwner());
+        printer.setType(inputPayload.getType());
+        printersService.save(printer);
 
-    //         return new ResponseEntity<>(200,HttpStatus.OK);
-    //     }
+            return new ResponseEntity<>(200,HttpStatus.OK);
+        }
 }
