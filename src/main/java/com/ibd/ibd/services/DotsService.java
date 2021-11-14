@@ -32,7 +32,7 @@ public class DotsService {
     private DotsData populatePrintoutData(final Dots dot) {
         DotsData dotsData = new DotsData();
         dotsData.setID(dot.getID());
-        dotsData.setIDPrinter(dot.getIDPrinter());
+        dotsData.setPrinter(dot.getIDPrinter());
         dotsData.setTitle(dot.getTitle());
         dotsData.setDate(dot.getDate());
         return dotsData;

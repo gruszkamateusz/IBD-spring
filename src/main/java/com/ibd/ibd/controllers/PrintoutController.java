@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import com.ibd.ibd.dto.PrintoutData;
+import com.ibd.ibd.models.Printers;
 import com.ibd.ibd.models.Printouts;
 import com.ibd.ibd.services.PrintoutService;
 
@@ -44,7 +45,7 @@ public class PrintoutController {
 
         Printouts printout = new Printouts();
         //printer.setID(inputPayload.getID());
-        printout.setIDPrinter(1);
+        printout.setPrinter(inputPayload.getPrinter());
         printout.setTitle(inputPayload.getTitle());
         printout.setDate(inputPayload.getDate());
             return new ResponseEntity<>(200,HttpStatus.OK);

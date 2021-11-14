@@ -32,7 +32,7 @@ public class PrintoutService {
     private PrintoutData populatePrintoutData(final Printouts printout) {
         PrintoutData printoutsData = new PrintoutData();
         printoutsData.setID(printout.getID());
-        printoutsData.setIDPrinter(printout.getIDPrinter());
+        printoutsData.setPrinter(printout.getPrinter());
         printoutsData.setTitle(printout.getTitle());
         printoutsData.setDate(printout.getDate());
         return printoutsData;

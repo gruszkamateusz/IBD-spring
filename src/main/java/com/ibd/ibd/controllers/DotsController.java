@@ -42,7 +42,7 @@ public class DotsController {
 
         Dots dot = new Dots();
         //printer.setID(inputPayload.getID());
-        dot.setIDPrinter(1);
+        dot.setIDPrinter(inputPayload.getPrinter());
         dot.setTitle(inputPayload.getTitle());
         dot.setDate(inputPayload.getDate());
             return new ResponseEntity<>(200,HttpStatus.OK);
