@@ -14,7 +14,7 @@ public class Printers {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idprinters;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "idlocalization", referencedColumnName = "idlocalization")
     private Localization localization;
 

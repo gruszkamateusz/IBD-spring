@@ -15,7 +15,7 @@ public class Dots {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long iddot;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "idprinters", referencedColumnName = "idprinters")
     private Printers printer;
     private String title;

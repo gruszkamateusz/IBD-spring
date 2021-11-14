@@ -46,7 +46,6 @@ public class PrintersController {
     public ResponseEntity<Integer> insertPrinter(@RequestBody PrintersData inputPayload){ 
 
         Printers printer = new Printers();
-        //printer.setID(inputPayload.getID());
         printer.setLocalization(inputPayload.getLocalization());
         printer.setOwner(inputPayload.getOwner());
         printer.setType(inputPayload.getType());

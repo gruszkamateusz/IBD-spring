@@ -16,7 +16,7 @@ public class Printouts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idprintouts;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "idprinters", referencedColumnName = "idprinters")
     private Printers printer;
     private String title;
