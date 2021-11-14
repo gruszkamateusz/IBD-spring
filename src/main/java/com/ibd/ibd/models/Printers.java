@@ -1,25 +1,35 @@
 package com.ibd.ibd.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import net.bytebuddy.asm.Advice.Local;
 
 @Entity
 public class Printers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idprinters;
-    private long idlocalization;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idlocalization", referencedColumnName = "idlocalization")
+    private Localization localization;
+
+
     private String owner;
     private String type;
    
     public Printers() {
     }
 
-    public Printers(long idprinters,long idlocalization,String owner,String type) {
+    public Printers(long idprinters,Localization idlocalization,String owner,String type) {
         this.idprinters = idprinters;
-        this.idlocalization = idlocalization;
+        this.localization = idlocalization;
         this.owner = owner;
         this.type = type;
     }
@@ -27,8 +37,8 @@ public class Printers {
     public long getID() {
         return idprinters;
     }
-    public long getLocalization() {
-        return idlocalization;
+    public Localization getLocalization() {
+        return localization;
     }
     public String getOwner() {
         return owner;
@@ -39,8 +49,8 @@ public class Printers {
     public void setID(long s) {
         this.idprinters = s;
     }
-    public void setLocalization(long s) {
-         this.idlocalization = s;
+    public void setLocalization(Localization s) {
+         this.localization = s;
     }
     public void setOwner(String s) {
         this.owner = s;

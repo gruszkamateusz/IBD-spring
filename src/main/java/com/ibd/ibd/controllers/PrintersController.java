@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import com.ibd.ibd.dto.PrintersData;
+import com.ibd.ibd.models.Localization;
 import com.ibd.ibd.models.Printers;
 import com.ibd.ibd.services.PrintersService;
 
@@ -45,8 +46,9 @@ public class PrintersController {
     public ResponseEntity<Integer> insertPrinter(@RequestBody PrintersData inputPayload){ 
 
         Printers printer = new Printers();
+        Localization localization = new Localization();
         //printer.setID(inputPayload.getID());
-        printer.setLocalization(1);
+        printer.setLocalization(localization);
         printer.setOwner(inputPayload.getOwner());
         printer.setType(inputPayload.getType());
         printersService.save(printer);

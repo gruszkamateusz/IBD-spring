@@ -6,7 +6,7 @@ import com.ibd.ibd.models.Localization;
 
 public class PrintersData {
     private long idprinters;
-    private long localization;
+    private Localization localization;
     private String owner;
     private String type;
 
@@ -19,7 +19,7 @@ public class PrintersData {
     public long getID() {
         return idprinters;
     }
-    public long getLocalization() {
+    public Localization getLocalization() {
         return localization;
     }
     public String getOwner() {
@@ -31,8 +31,8 @@ public class PrintersData {
     public void setID(long l) {
         this.idprinters = l;
     }
-    public void setLocalization(long localization) {
-         this.localization = localization;
+    public void setLocalization(Localization localization2) {
+         this.localization = localization2;
     }
     public void setOwner(String s) {
         this.owner = s;
