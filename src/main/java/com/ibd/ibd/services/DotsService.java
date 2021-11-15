@@ -37,4 +37,7 @@ public class DotsService {
         dotsData.setDate(dot.getDate());
         return dotsData;
     }
+    public void save(Dots dot) {
+        dotsRepository.save(dot);
+    }
 }

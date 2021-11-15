@@ -45,6 +45,7 @@ public class DotsController {
         dot.setIDPrinter(inputPayload.getPrinter());
         dot.setTitle(inputPayload.getTitle());
         dot.setDate(inputPayload.getDate());
+        dotsService.save(dot);
             return new ResponseEntity<>(200,HttpStatus.OK);
         }
 }

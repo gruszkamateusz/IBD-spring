@@ -48,6 +48,7 @@ public class PrintoutController {
         printout.setPrinter(inputPayload.getPrinter());
         printout.setTitle(inputPayload.getTitle());
         printout.setDate(inputPayload.getDate());
+        printoutService.save(printout);
             return new ResponseEntity<>(200,HttpStatus.OK);
         }
 }
