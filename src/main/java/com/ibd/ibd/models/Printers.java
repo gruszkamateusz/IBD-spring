@@ -1,6 +1,5 @@
 package com.ibd.ibd.models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

@@ -2,12 +2,9 @@ package com.ibd.ibd.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.ibd.ibd.dto.PrintersData;
-import com.ibd.ibd.models.Localization;
 import com.ibd.ibd.models.Printers;
-import com.ibd.ibd.repositories.LocalizationRepository;
 import com.ibd.ibd.repositories.PrintersRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
